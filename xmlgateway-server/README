@@ -1,0 +1,30 @@
+
+
+Proses instalasi dan uji coba
+1. Install mysql
+2. Buat database "training"
+   mysql> create database transaksi;
+3. Buat user dan passwordnya
+   mysql> grant all on transaksi.* to transaksi@localhost identified by 'transaksi';
+4. buat tablenya
+   mysql> CREATE TABLE `TRANSAKSI_XML` (
+          `ID` bigint(20) NOT NULL auto_increment,
+          `AMOUNT` decimal(19,2) default NULL,
+          `ISO` text,
+          `MESSAGE_ID` varchar(255) default NULL,
+          `MSISDN` varchar(19) NOT NULL,
+          `REQUEST_RESPONSE` int(11) NOT NULL,
+          `STAN` varchar(6) NOT NULL,
+          `STATUS` int(11) NOT NULL,
+          `TRANSACTION_DATE` datetime NOT NULL,
+          `TRANSACTION_ID` varchar(30) default NULL,
+          `TRANSAKSI_TYPE` int(11) NOT NULL,
+          `XML` text,
+          PRIMARY KEY  (`ID`)
+        ) ENGINE=InnoDB;
+6. Jalankan aplikasinya dari netbeans
+   - Run Hut Simulator : com.g4sei.id.xmlgateway.server.simulator.HutSimulator
+   - Run XmlGateway : com.g4sei.id.xmlgateway.server.XmlGatewayServer
+   - jalankan ITM simulator : com.g4sei.id.xmlgateway.server.simulator.ITMSimulator
+   - jalankan Permata Sender, seolah2 ada proses pembayaran dari bank permata ke HUT : com.g4sei.id.xmlgateway.server.simulator.PermataSenderFrame
+     Setelah Frame swingnya terlihat, pindah ke tab pembayaran 

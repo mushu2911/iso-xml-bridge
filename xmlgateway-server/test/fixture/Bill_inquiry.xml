@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<OnlineRequest>
+ <serviceAddressing>
+  <From>euronet</From>
+  <MerchantType>6011</MerchantType>
+  <MessageId>06B3A3818315</MessageId>
+  <Action>GetSubBillInfo</Action>
+ </serviceAddressing>
+ <MSISDN>6289681000294</MSISDN>
+ <BillingResponse>
+  <ResponseResult>
+   <ResponseCode>null</ResponseCode>
+   <ResponseDescription>null</ResponseDescription>
+   <ResponseAction>null</ResponseAction>
+  </ResponseResult>
+  <CurrBillnum>null</CurrBillnum>
+  <TotBillAmtDue>null</TotBillAmtDue>
+  <Accountholder>null</Accountholder>
+  <TransactionId>null</TransactionId>
+  <GenevaPayStatus>null</GenevaPayStatus>
+  <Date>11/03/09 10:44:42</Date>
+  <DueDate>null</DueDate>
+  <ATMCode>B1203DCH</ATMCode>
+  <Amount>0</Amount>
+ </BillingResponse>
+</OnlineRequest>

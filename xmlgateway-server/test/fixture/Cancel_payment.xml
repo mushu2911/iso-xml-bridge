@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<OnlineRequest>
+ <serviceAddressing>
+  <From>euronet</From> 
+  <MerchantType>6011</MerchantType>
+  <MessageId>06B3A3818315</MessageId>
+  <Action>CancelPayment</Action>
+ </serviceAddressing> 
+ <MSISDN>6289681000294</MSISDN>
+ <BillingResponse>
+  <ResponseResult> 
+   <ResponseCode>null</ResponseCode>
+   <ResponseDescription>null</ResponseDescription>
+   <ResponseAction>null</ResponseAction>
+  </ResponseResult> 
+  <CurrBillnum>null</CurrBillnum>
+  <TotBillAmtDue>null</TotBillAmtDue> 
+  <Accountholder>Test Uat Vip Post 6</Accountholder>
+  <TransactionId>184154475024</TransactionId>
+  <GenevaPayStatus>null</GenevaPayStatus>
+  <Date>11/03/09 10:44:42</Date>
+  <DueDate>23102006</DueDate>
+  <ATMCode>B1203DCH</ATMCode> 
+  <Amount>000000055000</Amount>
+ </BillingResponse>
+</OnlineRequest>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : server.xml.xml
+    Created on : November 22, 2009, 5:58 PM
+    Author     : ifnu
+    Description:
+        Konfigurasi xml 
+-->
+<connectors id="euronet-xml-gateway">
+    <!-- copy satu dari <connector> hingga ke </connector> untuk membuat connector baru-->
+    <connector id="euronet">
+        <!-- port yang akan dibuka oleh gateway -->
+        <inbound>
+            <ip>127.0.0.1</ip>
+            <port>9901</port>
+            <xml-validation-type>dtd</xml-validation-type> <!-- dtd, xml-root-tag, xml-schema. Digunakan untuk memvalidasi xml -->
+            <dtd>OnlineRequest.dtd</dtd>
+            <!--<xml-validation-type>xml-root-tag</xml-validation-type>
+            <xml-root-tag>OnlineRequest</xml-root-tag>
+            <xml-validation-type>xml-schema</xml-validation-type>
+            <xml-schema>OnlineRequest.xsd</xml-schema>-->
+        </inbound>
+        <!-- alamat ip server -->
+        <outbound>
+            <ip>127.0.0.1</ip>
+            <port>9904</port>
+            <xml-validation-type>dtd</xml-validation-type> <!-- dtd, xml-root-tag, xml-schema -->
+            <dtd>OnlineRequest.dtd</dtd>
+            <!--<xml-validation-type>xml-root-tag</xml-validation-type>
+            <xml-root-tag>OnlineRequest</xml-root-tag>
+            <xml-validation-type>xml-schema</xml-validation-type>
+            <xml-schema>OnlineRequest.xsd</xml-schema>-->
+        </outbound>
+        <transformer class="com.g4sei.id.xmlgateway.euronet.transformer.euronetTransformer"/>
+    </connector>
+    <!-- hidupkan remark kalau ingin menyalakan simulator-->
+    <simulator id="itm">
+        <ip>127.0.0.1</ip>
+        <port>9904</port>
+        <iso-conf path="relative">conf/itm-iso-conf.xml</iso-conf>
+        <timeout>70000</timeout>
+    </simulator>
+    <!-- konfigurasi untuk server, hanya salah satu dari server atau simulator yang boleh hidup. Kalau keduanya hidup yang digunakan adalah server-->
+    <!--<server id="itm">
+        <ip>127.0.0.1</ip>
+        <port>9907</port>
+        <iso-conf path="relative">conf/itm-iso-conf.xml</iso-conf>
+        <timeout>70000</timeout>
+    </server>-->
+    <!-- datasource for reporting-->
+    <datasource id="reporting">
+        <driver-class>com.mysql.jdbc.Driver</driver-class>
+        <url>jdbc:mysql://localhost:3306/reporting</url>
+        <username>reporting</username>
+        <password>reporting</password>
+    </datasource>
+    <log>
+        <transaction-logpath>log/transaction.log</transaction-logpath>
+        <transaction-max-file-size>40</transaction-max-file-size>
+        <transaction-logpath>log/monitoring.log</transaction-logpath>
+        <transaction-max-file-size>40</transaction-max-file-size>
+    </log>
+
+</connectors>
