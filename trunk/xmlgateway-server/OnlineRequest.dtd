@@ -1,0 +1,31 @@
+<!ELEMENT RequestInformation (serviceAddressing, MSISDN, GetSubBillInfo)>
+
+<!-- Message Headers -->
+<!ELEMENT serviceAddressing (From,MerchantType,MessageId,Action)>
+
+<!ELEMENT From (#PCDATA)>
+<!ELEMENT MerchantType (#PCDATA)>
+<!ELEMENT MessageId (#PCDATA)>
+<!ELEMENT Action (#PCDATA)>
+
+<!-- MSISDN to query on -->
+<!ELEMENT MSISDN (#PCDATA)>
+
+<!-- Get Subscriber Bill Info Request-->
+<!ELEMENT BillingResponse (ResponseResult,CurrBillnum, TotBillAmtDue,Accountholder,TransactionId,GenevaPayStatus,Date,DueDate,ATMCode,Amount)>
+
+<!ELEMENT ResponseResult (ResponseCode, ResponseDescription, ResponseAction)>
+<!ELEMENT ResponseCode (#PCDATA)>
+<!ELEMENT ResponseDescription (#PCDATA)>
+<!ELEMENT ResponseAction (#PCDATA)>
+
+<!-- Get Subscriber Bill Amount Details-->
+<!ELEMENT CurrBillnum (#PCDATA)>
+<!ELEMENT TotBillAmtDue (#PCDATA)>
+<!ELEMENT Accountholder (#PCDATA)>
+<!ELEMENT TransactionId (#PCDATA)>
+<!ELEMENT GenevaPayStatus (#PCDATA)>
+<!ELEMENT Date (#PCDATA)>
+<!ELEMENT DueDate (#PCDATA)>
+<!ELEMENT ATMCode (#PCDATA)>
+<!ELEMENT Amount (#PCDATA)>

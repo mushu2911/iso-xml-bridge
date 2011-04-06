@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : server.xml.xml
+    Created on : November 22, 2009, 5:58 PM
+    Author     : ifnu
+    Description:
+    Konfigurasi xml
+-->
+<connectors id="euronet-xml-gateway">
+    <connector id="euronet-to-hut">
+        <!-- port yang akan dibuka oleh xml gateway -->
+        <inbound>
+            <ip>127.0.0.1</ip>
+            <port>9092</port>
+            <xml-validation-type>dtd</xml-validation-type> 
+            <dtd>OnlineRequest.dtd</dtd>
+        </inbound>
+        <!-- alamat ip hut -->
+        <outbound>
+            <ip>127.0.0.1</ip>
+            <port>9093</port>
+            <xml-validation-type>dtd</xml-validation-type> 
+            <dtd>OnlineRequest.dtd</dtd>
+        </outbound>
+        <transformer class="com.g4sei.id.xmlgateway.hut.HutTransformer"/>
+    </connector>
+    <server id="itm">
+        <ip>127.0.0.1</ip>
+        <port>9094</port>
+        <iso-conf path="relative">conf/itm-iso-conf.xml</iso-conf>
+        <timeout>70000</timeout>
+    </server>
+    <log>
+        <transaction-logpath>log/transaction.log</transaction-logpath>
+        <transaction-max-file-size>40</transaction-max-file-size>
+        <transaction-logpath>log/monitoring.log</transaction-logpath>
+        <transaction-max-file-size>40</transaction-max-file-size>
+    </log>
+
+</connectors>
